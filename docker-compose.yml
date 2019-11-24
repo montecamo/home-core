@@ -9,13 +9,16 @@ services:
 
   bezie:
     build: 'bezie'
+    container_name: 'bezie'
     ports:
     - "3000:80"
   newsify:
     build: 'newsify'
+    container_name: 'newsify'
     ports:
     - "3001:80"
   twitter:
     build: 'twitter-project'
+    container_name: 'twitter'
     ports:
     - "3002:80"
