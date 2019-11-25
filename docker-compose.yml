@@ -8,17 +8,22 @@ services:
     - "80:80"
 
   bezie:
-    build: 'bezie'
+    build: 'projects/bezie'
     container_name: 'bezie'
     ports:
     - "3000:80"
   newsify:
-    build: 'newsify'
+    build: 'projects/newsify'
     container_name: 'newsify'
     ports:
     - "3001:80"
   twitter:
-    build: 'twitter-project'
+    build: 'projects/twitter-project'
     container_name: 'twitter'
     ports:
     - "3002:80"
+  fracty:
+    build: 'projects/fracty'
+    container_name: 'fracty'
+    ports:
+    - "3003:80"

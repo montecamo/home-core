@@ -1,9 +1,12 @@
 [submodule "newsify"]
-	path = newsify
+	path = projects/newsify
 	url = git@github.com:montecamo/newsify
 [submodule "bezie"]
-	path = bezie
+	path = projects/bezie
 	url = git@github.com:montecamo/bezie-visualizer
 [submodule "twitter-project"]
-	path = twitter-project
+	path = projects/twitter-project
 	url = git@github.com:montecamo/twitter-project
+[submodule "projects/fracty"]
+	path = projects/fracty
+	url = git@github.com:montecamo/fracty
