@@ -10,3 +10,6 @@
 [submodule "projects/fracty"]
 	path = projects/fracty
 	url = git@github.com:montecamo/fracty
+[submodule "projects/jobos"]
+	path = projects/jobos
+	url = git@github.com:montecamo/jobos
