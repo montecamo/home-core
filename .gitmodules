@@ -13,3 +13,6 @@
 [submodule "projects/jobos"]
 	path = projects/jobos
 	url = git@github.com:montecamo/jobos
+[submodule "projects/daves"]
+	path = projects/daves
+	url = git@github.com:montecamo/daves

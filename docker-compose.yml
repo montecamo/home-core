@@ -27,8 +27,13 @@ services:
     container_name: 'fracty'
     ports:
     - "3003:80"
-  jobox:
+  jobos:
     build: 'projects/jobos'
     container_name: 'jobos'
     ports:
     - "3004:80"
+  daves:
+    build: 'projects/daves'
+    container_name: 'daves'
+    ports:
+    - "3005:80"
