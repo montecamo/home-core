@@ -15,45 +15,33 @@ services:
     container_name: 'bezie'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3000:443"
 
   newsify:
     build: 'projects/newsify'
     container_name: 'newsify'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3001:443"
 
   twitter:
     build: 'projects/twitter-project'
     container_name: 'twitter'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3002:443"
 
   fracty:
     build: 'projects/fracty'
     container_name: 'fracty'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3003:443"
 
   jobos:
     build: 'projects/jobos'
     container_name: 'jobos'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3004:443"
 
   daves:
     build: 'projects/daves'
     container_name: 'daves'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
-    ports:
-    - "3005:443"
