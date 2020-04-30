@@ -16,3 +16,6 @@
 [submodule "projects/daves"]
 	path = projects/daves
 	url = git@github.com:montecamo/daves
+[submodule "projects/pushed"]
+	path = projects/pushed
+	url = git@github.com:montecamo/pushed

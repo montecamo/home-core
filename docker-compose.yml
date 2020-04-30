@@ -7,6 +7,7 @@ services:
     ports:
     - "80:80"
     - "443:443"
+    - "8443:8443"
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
 
@@ -43,5 +44,11 @@ services:
   daves:
     build: 'projects/daves'
     container_name: 'daves'
+    volumes:
+    - ./data/certbot/conf:/etc/letsencrypt
+
+  pushed:
+    build: 'projects/pushed'
+    container_name: 'pushed'
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
