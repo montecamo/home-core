@@ -6,7 +6,7 @@
 	url = git@github.com:montecamo/bezie-visualizer
 [submodule "twitter-project"]
 	path = projects/twitter-project
-	url = git@github.com:montecamo/twitter-project
+	url = git@gitlab.com:montecamo/twitter-project.git 
 [submodule "projects/fracty"]
 	path = projects/fracty
 	url = git@github.com:montecamo/fracty
@@ -15,7 +15,7 @@
 	url = git@github.com:montecamo/jobos
 [submodule "projects/daves"]
 	path = projects/daves
-	url = git@github.com:montecamo/daves
+	url = git@gitlab.com:montecamo/daves.git 
 [submodule "projects/pushed"]
 	path = projects/pushed
 	url = git@github.com:montecamo/pushed
