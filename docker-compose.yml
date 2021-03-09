@@ -35,6 +35,12 @@ services:
     volumes:
     - ./data/certbot/conf:/etc/letsencrypt
 
+  pixiwave:
+    build: 'projects/pixiwave'
+    container_name: 'pixiwave'
+    volumes:
+    - ./data/certbot/conf:/etc/letsencrypt
+
   jobos:
     build: 'projects/jobos'
     container_name: 'jobos'

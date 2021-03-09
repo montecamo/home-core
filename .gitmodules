@@ -19,3 +19,7 @@
 [submodule "projects/pushed"]
 	path = projects/pushed
 	url = git@github.com:montecamo/pushed
+[submodule "projects/pixiwave"]
+	path = projects/pixiwave
+	url = git@github.com:montecamo/pixiwave.git
+	branch = master
