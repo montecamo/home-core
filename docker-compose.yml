@@ -9,52 +9,52 @@ services:
     - "443:443"
     - "8443:8443"
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   bezie:
     build: 'projects/bezie'
     container_name: 'bezie'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   newsify:
     build: 'projects/newsify'
     container_name: 'newsify'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   twitter:
     build: 'projects/twitter-project'
     container_name: 'twitter'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   fracty:
     build: 'projects/fracty'
     container_name: 'fracty'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   pixiwave:
     build: 'projects/pixiwave'
     container_name: 'pixiwave'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   jobos:
     build: 'projects/jobos'
     container_name: 'jobos'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   daves:
     build: 'projects/daves'
     container_name: 'daves'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
 
   pushed:
     build: 'projects/pushed'
     container_name: 'pushed'
     volumes:
-    - ./data/certbot/conf:/etc/letsencrypt
+    - /etc/letsencrypt:/etc/letsencrypt
