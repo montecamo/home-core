@@ -30,3 +30,11 @@
 	path = projects/pixiwave
 	url = git@github.com:montecamo/pixiwave.git
 	branch = master
+[submodule "projects/cors-proxy"]
+	path = projects/cors-proxy
+	url = git@github.com:theboringindustries/cors-anywhere.git 
+	branch = master
+[submodule "projects/cors-anywhere"]
+	path = projects/cors-anywhere
+	url = git@github.com:theboringindustries/cors-anywhere.git
+	branch = master

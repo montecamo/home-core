@@ -7,7 +7,6 @@ services:
     ports:
     - "80:80"
     - "443:443"
-    - "8443:8443"
     volumes:
     - /etc/letsencrypt:/etc/letsencrypt
 
@@ -56,5 +55,13 @@ services:
   pushed:
     build: 'projects/pushed'
     container_name: 'pushed'
+    volumes:
+    - /etc/letsencrypt:/etc/letsencrypt
+
+  cors-proxy:
+    build: 'projects/cors-anywhere'
+    container_name: 'cors-proxy'
+    ports:
+    - "8443:443"
     volumes:
     - /etc/letsencrypt:/etc/letsencrypt
