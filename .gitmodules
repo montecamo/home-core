@@ -38,3 +38,7 @@
 	path = projects/cors-anywhere
 	url = git@github.com:theboringindustries/cors-anywhere.git
 	branch = master
+[submodule "projects/resplash"]
+	path = projects/resplash
+	url = git@github.com:montecamo/resplash.git
+	branch = master

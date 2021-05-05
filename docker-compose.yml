@@ -65,3 +65,15 @@ services:
     - "8443:443"
     volumes:
     - /etc/letsencrypt:/etc/letsencrypt
+  resplash:
+    build: 'projects/resplash'
+    container_name: 'resplash'
+    volumes:
+    - /etc/letsencrypt:/etc/letsencrypt
+  resplash-api:
+    build:
+      context: 'projects/resplash' 
+      dockerfile: Dockerfile.api
+    container_name: 'resplash-api'
+    volumes:
+    - /etc/letsencrypt:/etc/letsencrypt
