@@ -42,3 +42,7 @@
 	path = projects/resplash
 	url = git@github.com:montecamo/resplash.git
 	branch = master
+[submodule "projects/home-page"]
+	path = projects/home-page
+	url = git@github.com:montecamo/home-page.git
+	branch = master

@@ -10,6 +10,11 @@ services:
     volumes:
     - /etc/letsencrypt:/etc/letsencrypt
 
+  home-page:
+    build: 'projects/home-page'
+    container_name: 'home-page'
+    volumes:
+    - /etc/letsencrypt:/etc/letsencrypt
   bezie:
     build: 'projects/bezie'
     container_name: 'bezie'
