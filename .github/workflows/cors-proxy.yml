@@ -1,0 +1,21 @@
+name: cors-proxy
+on: workflow_dispatch
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        env:
+          NAME: "cors-proxy"
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          envs: NAME
+          script: |
+            cd home-page
+            bash scripts/clone-projects.sh
+            bash scripts/build-container.sh $NAME
+            bash scripts/start.sh $NAME
