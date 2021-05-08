@@ -21,3 +21,4 @@ jobs:
             bash scripts/build-container.sh $NAME
             bash scripts/build-container.sh $NAME-api
             bash scripts/start.sh $NAME
+            bash scripts/start.sh $NAME-api
