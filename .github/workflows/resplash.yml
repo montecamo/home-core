@@ -16,7 +16,7 @@ jobs:
           envs: NAME
           script: |
             cd home-page
-            bash scripts/clone-projects.sh
+            bash scripts/clone-projects.sh projects/$NAME
             bash scripts/build-container.sh $NAME
             bash scripts/build-container.sh $NAME-api
             bash scripts/start.sh $NAME

@@ -3,4 +3,4 @@
 cd ~/home-page
 
 git submodule init
-git submodule update --remote --recursive
+git submodule update --remote --recursive $1
