@@ -1,86 +1,100 @@
-version: '3'
+version: "3"
 
 services:
   home:
     build:
       context: .
     ports:
-    - "80:80"
-    - "443:443"
+      - "80:80"
+      - "443:443"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   home-page:
-    build: 'projects/home-page'
-    container_name: 'home-page'
+    build: "projects/home-page"
+    container_name: "home-page"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
+
   bezie:
-    build: 'projects/bezie'
-    container_name: 'bezie'
+    build: "projects/bezie"
+    container_name: "bezie"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   newsify:
-    build: 'projects/newsify'
-    container_name: 'newsify'
+    build: "projects/newsify"
+    container_name: "newsify"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   twitter:
-    build: 'projects/twitter-project'
-    container_name: 'twitter'
+    build: "projects/twitter-project"
+    container_name: "twitter"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   fracty:
-    build: 'projects/fracty'
-    container_name: 'fracty'
+    build: "projects/fracty"
+    container_name: "fracty"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   pixiwave:
-    build: 'projects/pixiwave'
-    container_name: 'pixiwave'
+    build: "projects/pixiwave"
+    container_name: "pixiwave"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   jobos:
-    build: 'projects/jobos'
-    container_name: 'jobos'
+    build: "projects/jobos"
+    container_name: "jobos"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   daves:
-    build: 'projects/daves'
-    container_name: 'daves'
+    build: "projects/daves"
+    container_name: "daves"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   pushed:
-    build: 'projects/pushed'
-    container_name: 'pushed'
+    build: "projects/pushed"
+    container_name: "pushed"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   cors-proxy:
-    build: 'projects/cors-anywhere'
-    container_name: 'cors-proxy'
+    build: "projects/cors-anywhere"
+    container_name: "cors-proxy"
     ports:
-    - "8443:443"
+      - "8443:443"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
   resplash:
-    build: 'projects/resplash'
-    container_name: 'resplash'
+    build: "projects/resplash"
+    container_name: "resplash"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
-
+      - /etc/letsencrypt:/etc/letsencrypt
   resplash-api:
     build:
-      context: 'projects/resplash' 
+      context: "projects/resplash"
       dockerfile: Dockerfile.api
-    container_name: 'resplash-api'
+    container_name: "resplash-api"
     volumes:
-    - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
+
+  pixi:
+    build: "projects/pixi/packages/svelte-ui"
+    container_name: "pixi"
+  pixi-api:
+    build: "projects/pixi/packages/server"
+    container_name: "pixi-api"
+
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    container_name: "mongo"
+    volumes: ["~/mongo/data:/data/db"]

@@ -46,3 +46,7 @@
 	path = projects/home-page
 	url = git@github.com:montecamo/home-page.git
 	branch = master
+[submodule "projects/pixi"]
+	path = projects/pixi
+	url = git@github.com:montecamo/pixi.git
+	branch = master
