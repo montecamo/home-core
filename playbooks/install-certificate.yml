@@ -1,0 +1,32 @@
+- name: Install certificates
+  hosts: all
+  vars_files:
+    - vars/secret.yml
+  become: yes
+  tasks:
+    - name: Install snap
+      apt: name=snap state=latest update_cache=yes
+    - name: Install nginx
+      apt: name=nginx state=latest
+    - name: Stop nginx
+      command: systemctl stop nginx
+    - name: Install core
+      command: snap install core
+    - name: Refresh core
+      command: snap refresh core
+    - name: Install certbot
+      command: snap install --classic certbot
+    - name: Link certbot
+      command: ln -s /snap/bin/certbot /usr/bin/certbot
+    - name: Trust plugin
+      command: snap set certbot trust-plugin-with-root=ok
+    - name: Install certbot-dns-cloudflare
+      command: snap install certbot-dns-cloudflare 
+    - name: Create secret
+      copy:
+        dest: "~/.secret.ini"
+        content: "dns_cloudflare_api_token = {{ cloudflare_key }}"
+    - name: Changing perm of secret 
+      file: dest="~/.secret.ini" mode=600
+    - name: Install certificates
+      command: certbot certonly --noninteractive --agree-tos --email "{{ cloudflare_email }}" --dns-cloudflare --dns-cloudflare-credentials ~/.secret.ini --dns-cloudflare-propagation-seconds 30 -d "{{ domain }}" -d *."{{ domain }}" -i nginx
