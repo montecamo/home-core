@@ -1,0 +1,15 @@
+---
+- name: Initialize
+  hosts: all
+
+- name: Install docker
+  import_playbook: install-docker.yml
+
+- name: Create user
+  import_playbook: create-user.yml
+
+- name: Install certificates
+  import_playbook: install-certificate.yml
+
+- name: Start project
+  import_playbook: start-project.yml

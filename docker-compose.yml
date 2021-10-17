@@ -11,86 +11,54 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
 
   home-page:
-    build: "projects/home-page"
-    container_name: "home-page"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-
-  bezie:
-    build: "projects/bezie"
-    container_name: "bezie"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/home-page:master
+    container_name: home-page
 
   newsify:
-    build: "projects/newsify"
-    container_name: "newsify"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/newsify:master
+    container_name: newsify
 
-  twitter:
-    build: "projects/twitter-project"
-    container_name: "twitter"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+  bezie:
+    image: ghcr.io/montecamo/bezie:master
+    container_name: bezie
 
   fracty:
-    build: "projects/fracty"
-    container_name: "fracty"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/fracty:master
+    container_name: fracty
 
   pixiwave:
-    build: "projects/pixiwave"
-    container_name: "pixiwave"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/pixiwave:master
+    container_name: pixiwave
 
   jobos:
-    build: "projects/jobos"
-    container_name: "jobos"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/jobos:master
+    container_name: jobos
+
+  twitter:
+    image: registry.gitlab.com/montecamo/twitter-project:latest
+    container_name: twitter
 
   daves:
-    build: "projects/daves"
-    container_name: "daves"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: registry.gitlab.com/montecamo/daves:latest
+    container_name: daves
 
   pushed:
-    build: "projects/pushed"
-    container_name: "pushed"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+    image: ghcr.io/montecamo/pushed:master
+    container_name: pushed
+
+  resplash-api:
+    image: ghcr.io/montecamo/resplash-api:master
+    container_name: resplash-api
+
+  resplash:
+    image: ghcr.io/montecamo/resplash:master
+    container_name: resplash
 
   cors-proxy:
-    build: "projects/cors-anywhere"
+    image: ghcr.io/theboringindustries/cors-anywhere:master
     container_name: "cors-proxy"
     ports:
       - "8443:443"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-
-  resplash:
-    build: "projects/resplash"
-    container_name: "resplash"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-  resplash-api:
-    build:
-      context: "projects/resplash"
-      dockerfile: Dockerfile.api
-    container_name: "resplash-api"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-
-  pixi:
-    build: "projects/pixi/packages/svelte-ui"
-    container_name: "pixi"
-  pixi-api:
-    build: "projects/pixi/packages/server"
-    container_name: "pixi-api"
 
   mongo:
     image: "mongo:latest"
@@ -98,3 +66,9 @@ services:
       - "27017:27017"
     container_name: "mongo"
     volumes: ["~/mongo/data:/data/db"]
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
