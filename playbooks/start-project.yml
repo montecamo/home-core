@@ -5,15 +5,15 @@
   become: true
   become_user: "{{ username }}"
   tasks:
-  - name: Clone a github repository
-    git:
-      repo: https://github.com/montecamo/home-core
-      version: master
-      dest: "/home/{{ username }}/core"
-      clone: yes
-      update: yes
-  - name: Start project
-    docker_compose:
-      state: present
-      project_src: "/home/{{ username }}/core"
-      build: yes
+    - name: Clone a github repository
+      git:
+        repo: https://github.com/montecamo/home-core
+        version: master
+        dest: "/home/{{ username }}/core"
+        clone: yes
+        update: yes
+    - name: Start project
+      docker_compose:
+        state: present
+        project_src: "/home/{{ username }}/core"
+        build: yes
