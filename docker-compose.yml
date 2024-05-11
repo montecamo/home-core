@@ -54,6 +54,14 @@ services:
     image: ghcr.io/montecamo/resplash:master
     container_name: resplash
 
+  moovie:
+    image: ghcr.io/montecamo/mooviego:master
+    container_name: moovie
+
+  moovie-bot:
+    image: ghcr.io/montecamo/mooviego-bot:master
+    container_name: moovie-bot
+
   cors-proxy:
     image: ghcr.io/theboringindustries/cors-anywhere:master
     container_name: "cors-proxy"
